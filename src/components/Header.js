@@ -1,25 +1,15 @@
 import { Logo } from './Logo'
 import { Navigation } from './Navigation'
-const links = [
-  {
-    link: '/',
-    label: 'home',
-  },
-  {
-    link: '/',
-    label: 'about',
-  },
-  {
-    link: '/',
-    label: 'contacts',
-  },
-]
+import { UserMenu } from './UserMenu'
 
 export function Header() {
   return (
     <header className="header">
-      <Logo />
-      <Navigation links={links} />
+      <div style={{ display: 'flex', width: '50%' }}>
+        <Logo />
+        <UserMenu />
+      </div>
+      <Navigation/>
     </header>
   )
 }

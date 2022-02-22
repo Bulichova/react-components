@@ -1,10 +1,13 @@
 import { List } from './List'
 import { LinkItem } from './LinkItem'
-export function Navigation({ links }) {
+import { useContext } from 'react'
+import AppContext from '../context/AppContext'
+export function Navigation() {
+  const { navigationLinks } = useContext(AppContext)
   return (
     <nav>
       <List className="navList">
-        {links.map(({ link, label }, index) => {
+        {navigationLinks.map(({ link, label }, index) => {
           return <LinkItem key={index} link={link} label={label} />
         })}
       </List>
